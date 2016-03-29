@@ -36,6 +36,7 @@ gulp.task('css', function () {
         require('postcss-sorting')({
       'sort-order': 'csscomb'
     }),
+        require('postcss-short')({}),
         mqpacker({
       sort: true
     }),
@@ -77,7 +78,7 @@ gulp.task('js', function () {
     }));
 });
 gulp.task('image', function () {
-  return gulp.src('source/img/*.*')
+  return gulp.src('source/img/**/*.*{png,jpg,gif}')
     .pipe(changed('build/img'))
     .pipe(cache(imagemin({
       interlaced: true,
@@ -110,16 +111,16 @@ gulp.task('svg', function () {
 
 gulp.task('sprite', function () {
   var spriteData =
-    gulp.src('source/img/features-sprite/*.*')
+    gulp.src('source/img/sprite/*.*')
     .pipe(spritesmith({
       imgName: 'sprite.png',
-      cssName: 'sprite.scss',
-      cssFormat: 'scss',
+      cssName: '_sprite.css',
+      cssFormat: 'css',
       imgPath: '../img/sprite.png'
     }));
 
   spriteData.img.pipe(gulp.dest('build/img/'));
-  spriteData.css.pipe(gulp.dest('source/css/sprite/'));
+  spriteData.css.pipe(gulp.dest('source/style/'));
 });
 
 gulp.task('browserSync', function () {

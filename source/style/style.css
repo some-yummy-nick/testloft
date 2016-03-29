@@ -1,46 +1,5 @@
-@import 'red';
-:root {
-  --body_bg_color: color(black lightness(10%));
-  --col: red;
-}
-
-body {
-  background: var(--body_bg_color);
-}
-
-.autoprefixer {
-  display: flex;
-  color: aqua;
-}
-
-p {
-  background: none;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  @media(min-width: 780px) {
-    color: red;
-  }
-}
-
-
-/* Testing cssnext */
-
-.cssnext {
-  background: color(red alpha(-10%));
-  @media(min-width: 780px) {
-    color: blue;
-  }
-}
-
-
-/* Testing precss */
-
-.precss {
-  @if 3 < 5 {
-    background: green;
-  }
-  @else {
-    background: blue;
-  }
-}
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'base/normalize';
+@import 'base/base';
+@import 'blocks/slider';

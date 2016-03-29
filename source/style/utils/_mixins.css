@@ -1,0 +1,56 @@
+@define-mixin clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+@define-mixin container {
+  width: 320px;
+  margin: 0 auto;
+  max-width: 1300px; // для реализациии резиновой сетки
+  @media ($tablet-widths) {
+    width: 640px;
+  }
+  @media ($desktop-widths) {
+    width: 960px;
+  }
+}
+
+@define-mixin container-fluid {
+  width: auto;
+  @media ($tablet-widths) {
+    width: 84%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@define-mixin no-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@define-mixin no-decor {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@define-mixin inline-block $valign:top {
+  display: inline-block;
+  vertical-align: $valign;
+}
+
+@define-mixin margin $margin-right {
+  margin-right: $margin-right;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

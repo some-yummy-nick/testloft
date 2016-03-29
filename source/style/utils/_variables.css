@@ -1,0 +1,11 @@
+:root {
+  --body_bg_color: color(black lightness(10%));
+  --col: red;
+}
+
+$font: "Open Sans",
+Arial,
+sans-serif;
+$mobile-widths-only: "max-width: 767px";
+$tablet-widths: "min-width: 768px";
+$desktop-widths: "min-width: 1200px";
