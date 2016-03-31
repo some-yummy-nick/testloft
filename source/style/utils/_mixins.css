@@ -13,17 +13,17 @@
   width: 320px;
   margin: 0 auto;
   max-width: 1300px; // для реализациии резиновой сетки
-  @media ($tablet-widths) {
+  @media (--tablet-widths) {
     width: 640px;
   }
-  @media ($desktop-widths) {
+  @media (--desktop-widths) {
     width: 960px;
   }
 }
 
 @define-mixin container-fluid {
   width: auto;
-  @media ($tablet-widths) {
+  @media (--tablet-widths) {
     width: 84%;
     max-width: 960px;
     margin: 0 auto;
