@@ -75,9 +75,7 @@ gulp.task('css:build', function () {
     require("csswring")()
     ];
   gulp.src('./source/style/style.css')
-    .pipe(sourcemaps.init())
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./build/style'))
 });
 
