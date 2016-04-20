@@ -20,25 +20,37 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   precss = require('precss'),
   easysprite = require('postcss-easysprites'),
+  gulpCommonJS = require('gulp-commonjs'),
+  browserify = require('browserify'),
+  source = require('vinyl-source-stream'),
+  sorting = require('postcss-sorting'),
+  lost = require('lost'),
+  assets = require('postcss-assets'),
   mqpacker = require('css-mqpacker');
+
 
 gulp.task('default', ['watch', 'browserSync', 'css', 'html', 'js', 'image']);
 
 gulp.task('css', function () {
   var processors = [
+        lost,
+        assets({
+      loadPaths: ['source/img'],
+      relativeTo: './source/style/'
+    }),
         precss,
         easysprite({
       imagePath: './source/img',
       spritePath: './source/img'
     }),
-        require('postcss-custom-media')(),
-        require('postcss-sorting')({
-      'sort-order': 'csscomb'
-    }),
-        require("postcss-cssnext")({
+    require('postcss-flexibility'),
+    require("postcss-cssnext")({
       browsers: ['last 3 version']
     }),
-        require('postcss-short')({}),
+        require('postcss-custom-media')(),
+        sorting({
+      'sort-order': 'csscomb'
+    }),
         mqpacker({
       sort: true
     })
@@ -57,16 +69,22 @@ gulp.task('css', function () {
 gulp.task('css:build', function () {
   var processors = [
         precss,
+        lost,
+        assets({
+      loadPaths: ['source/img'],
+      relativeTo: './source/style/'
+    }),
+    require('postcss-flexibility'),
+        require("postcss-cssnext")({
+      browsers: ['last 3 version']
+    }),
         easysprite({
       imagePath: './source/img',
       spritePath: './source/img'
     }),
         require('postcss-custom-media')(),
-        require('postcss-sorting')({
+        sorting({
       'sort-order': 'csscomb'
-    }),
-        require("postcss-cssnext")({
-      browsers: ['last 3 version']
     }),
         require('postcss-short')({}),
         mqpacker({
@@ -107,6 +125,15 @@ gulp.task('js', function () {
     }));
 });
 
+//gulp.task('js', function () {
+//  return browserify('./source/js/script.js')
+//    .bundle({
+//      debug: true
+//    })
+//    .pipe(source('script.js'))
+//    .pipe(gulp.dest('build/js'));
+//});
+
 gulp.task('js:build', function () {
   gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
     .pipe(rigger())
@@ -115,7 +142,7 @@ gulp.task('js:build', function () {
 });
 
 gulp.task('image', function () {
-  return gulp.src('source/img/.*{png,jpg,gif}')
+  gulp.src('source/img/*.*')
     .pipe(changed('build/img'))
     .pipe(cache(imagemin({
       interlaced: true,
@@ -151,7 +178,7 @@ gulp.task('browserSync', function () {
     server: {
       baseDir: './build'
     },
-    open: true,
+    open: false,
     notify: false
   });
 });

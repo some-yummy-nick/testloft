@@ -1,11 +1,7 @@
 :root {
-  --body_bg_color: color(black lightness(10%));
-  --col: red;
+  --font: "Open Sans", Arial, sans-serif;
 }
 
-$font: "Open Sans",
-Arial,
-sans-serif;
 @custom-media --mobile-widths-only (max-width: 767px);
 @custom-media --tablet-widths (min-width: 768px);
 @custom-media --desktop-widths (min-width: 1200px);

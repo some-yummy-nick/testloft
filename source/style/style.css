@@ -2,3 +2,6 @@
 @import 'utils/mixins';
 @import 'base/normalize';
 @import 'base/base';
+body {
+  background-image: resolve('logo.png') no-repeat;
+}

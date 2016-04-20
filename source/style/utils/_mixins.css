@@ -12,7 +12,7 @@
 @define-mixin container {
   width: 320px;
   margin: 0 auto;
-  max-width: 1300px; // для реализациии резиновой сетки
+  max-width: 1300px;
   @media (--tablet-widths) {
     width: 640px;
   }
