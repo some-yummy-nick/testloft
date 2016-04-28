@@ -21,29 +21,21 @@ var gulp = require('gulp'),
   precss = require('precss'),
   easysprite = require('postcss-easysprites'),
   gulpCommonJS = require('gulp-commonjs'),
-  browserify = require('browserify'),
   source = require('vinyl-source-stream'),
   sorting = require('postcss-sorting'),
-  lost = require('lost'),
-  assets = require('postcss-assets'),
-  mqpacker = require('css-mqpacker');
+  mqpacker = require('css-mqpacker'),
+  browserify = require('browserify');
 
-
-gulp.task('default', ['watch', 'browserSync', 'css', 'html', 'js', 'image']);
+gulp.task('default', ['watch', 'browserSync', 'css', 'html', 'js', 'image', 'copy']);
 
 gulp.task('css', function () {
   var processors = [
-        lost,
-        assets({
-      loadPaths: ['source/img'],
-      relativeTo: './source/style/'
-    }),
         precss,
         easysprite({
       imagePath: './source/img',
       spritePath: './source/img'
     }),
-    require('postcss-flexibility'),
+
     require("postcss-cssnext")({
       browsers: ['last 3 version']
     }),
@@ -69,12 +61,6 @@ gulp.task('css', function () {
 gulp.task('css:build', function () {
   var processors = [
         precss,
-        lost,
-        assets({
-      loadPaths: ['source/img'],
-      relativeTo: './source/style/'
-    }),
-    require('postcss-flexibility'),
         require("postcss-cssnext")({
       browsers: ['last 3 version']
     }),
@@ -189,7 +175,11 @@ gulp.task('clean', function () {
 
 gulp.task('copy', function () {
   gulp.src('source/fonts/**/*.*')
-    .pipe(gulp.dest('./build/fonts/'));
+    .pipe(changed('./build/fonts/'))
+    .pipe(gulp.dest('./build/fonts/'))
+  gulp.src('source/lib/**/*.*')
+    .pipe(changed('./build/lib/'))
+    .pipe(gulp.dest('./build/lib/'))
 });
 
 gulp.task('deploy', function () {
