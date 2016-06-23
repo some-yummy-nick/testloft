@@ -42,7 +42,20 @@
     text-decoration: underline;
   }
 }
-
+@define-mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+        &:visited {
+            color: $visited;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active, &:focus {
+            color: $active;
+        }
+    }
+}
 @define-mixin inline-block $valign:top {
   display: inline-block;
   vertical-align: $valign;

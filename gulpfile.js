@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
   changed = require('gulp-changed'),
+  babel = require("gulp-babel"),
   rigger = require('gulp-rigger'),
   htmlmin = require('gulp-htmlmin'),
   plumber = require('gulp-plumber'),
@@ -20,7 +21,6 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   precss = require('precss'),
   easysprite = require('postcss-easysprites'),
-  gulpCommonJS = require('gulp-commonjs'),
   source = require('vinyl-source-stream'),
   sorting = require('postcss-sorting'),
   mqpacker = require('css-mqpacker'),
@@ -101,15 +101,15 @@ gulp.task('html:build', function () {
     .pipe(gulp.dest('build/'))
 });
 
-gulp.task('js', function () {
-  gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
-    .pipe(plumber())
-    .pipe(rigger())
-    .pipe(gulp.dest('build/js'))
-    .pipe(reload({
-      stream: true
-    }));
-});
+//gulp.task('js', function () {
+//  gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
+//    .pipe(plumber())
+//    .pipe(rigger())
+//    .pipe(gulp.dest('build/js'))
+//    .pipe(reload({
+//      stream: true
+//    }));
+//});
 
 //gulp.task('js', function () {
 //  return browserify('./source/js/script.js')
@@ -119,6 +119,14 @@ gulp.task('js', function () {
 //    .pipe(source('script.js'))
 //    .pipe(gulp.dest('build/js'));
 //});
+
+gulp.task('js', () =>
+    gulp.src('./source/js/script.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('build/js'))
+);
 
 gulp.task('js:build', function () {
   gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал

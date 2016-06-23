@@ -1,7 +1,11 @@
 :root {
-  --font: "Open Sans", Arial, sans-serif;
+  --font: 'Oswald', Verdana, sans-serif;
 }
-
+@font-face {
+    font-family: 'Oswald';
+    src: url(../../fonts/Oswald.woff2) format('woff2'),
+         url(../../fonts/Oswald.woff) format('woff');
+}
 @custom-media --mobile-widths-only (max-width: 767px);
 @custom-media --tablet-widths (min-width: 768px);
 @custom-media --desktop-widths (min-width: 1200px);
