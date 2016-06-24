@@ -1,9 +1,9 @@
 {
-  "name": "pul",
+  "name": "post",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yeffasol/pul.git"
+    "url": "git+https://github.com/yeffasol/post.git"
   },
   "author": "Marat",
   "license": "MIT",
