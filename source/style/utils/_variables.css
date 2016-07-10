@@ -1,8 +1,0 @@
-:root {
-  --font: 'FiraSans', Verdana, sans-serif;
-  --green: #8cc34b;
-}
-
-@custom-media --mobile-widths-only (max-width: 767px);
-@custom-media --tablet-widths (max-width: 768px);
-@custom-media --desktop-widths (min-width: 1200px);
