@@ -132,7 +132,9 @@ gulp.task('js', function () {
 gulp.task('js:build', function () {
   gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
     .pipe(rigger())
-    .pipe(uglify())
+    .pipe(uglify({
+      mangle: false
+    }))
     .pipe(gulp.dest('build/js'))
 });
 
