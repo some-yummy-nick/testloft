@@ -23,8 +23,7 @@
 
 @define-mixin container-fluid {
   width: auto;
-  @media (--tablet-widths) {
-    width: 84%;
+  @media (min-width: 768px) {
     max-width: 960px;
     margin: 0 auto;
   }
@@ -42,20 +41,23 @@
     text-decoration: underline;
   }
 }
+
 @define-mixin links ($link, $visited, $hover, $active) {
-    & {
-        color: $link;
-        &:visited {
-            color: $visited;
-        }
-        &:hover {
-            color: $hover;
-        }
-        &:active, &:focus {
-            color: $active;
-        }
+  & {
+    color: $link;
+    &:visited {
+      color: $visited;
     }
+    &:hover {
+      color: $hover;
+    }
+    &:active,
+    &:focus {
+      color: $active;
+    }
+  }
 }
+
 @define-mixin inline-block $valign:top {
   display: inline-block;
   vertical-align: $valign;
@@ -63,7 +65,20 @@
 
 @define-mixin margin $margin-right {
   margin-right: $margin-right;
-  &:last-of-type {
+  &:nth-child(3n) {
     margin-right: 0;
   }
+}
+
+@define-mixin section-title {
+  font-size: 42px;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #212121;
+}
+
+@define-mixin section-p {
+  color: #727272;
+  font-size: 21px;
+  font-weight: 300;
 }

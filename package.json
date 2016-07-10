@@ -1,9 +1,9 @@
 {
-  "name": "post",
+  "name": "testloft",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yeffasol/post.git"
+    "url": "git+https://github.com/yeffasol/testloft.git"
   },
   "author": "Marat",
   "license": "MIT",

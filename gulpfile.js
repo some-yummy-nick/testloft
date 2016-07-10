@@ -24,6 +24,7 @@ var gulp = require('gulp'),
   source = require('vinyl-source-stream'),
   sorting = require('postcss-sorting'),
   mqpacker = require('css-mqpacker'),
+  path = require('path'),
   browserify = require('browserify');
 
 gulp.task('default', ['watch', 'browserSync', 'css', 'html', 'js', 'image', 'copy']);
@@ -101,15 +102,15 @@ gulp.task('html:build', function () {
     .pipe(gulp.dest('build/'))
 });
 
-//gulp.task('js', function () {
-//  gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
-//    .pipe(plumber())
-//    .pipe(rigger())
-//    .pipe(gulp.dest('build/js'))
-//    .pipe(reload({
-//      stream: true
-//    }));
-//});
+gulp.task('js', function () {
+  gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал
+    .pipe(plumber())
+    .pipe(rigger())
+    .pipe(gulp.dest('build/js'))
+    .pipe(reload({
+      stream: true
+    }));
+});
 
 //gulp.task('js', function () {
 //  return browserify('./source/js/script.js')
@@ -120,13 +121,13 @@ gulp.task('html:build', function () {
 //    .pipe(gulp.dest('build/js'));
 //});
 
-gulp.task('js', () =>
-    gulp.src('./source/js/script.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(gulp.dest('build/js'))
-);
+//gulp.task('js', () =>
+//  gulp.src('./source/js/script.js')
+//  .pipe(babel({
+//    presets: ['es2015']
+//  }))
+//  .pipe(gulp.dest('build/js'))
+//);
 
 gulp.task('js:build', function () {
   gulp.src('source/js/script.js') // return не нужен чтобы plumber не вылетал

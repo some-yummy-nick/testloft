@@ -15,8 +15,142 @@
 </head>
 
 <body>
-  <!-- Для поддержки css grid layouts !-->
-  <script src="lib/css-polyfills.js"></script>
+  //= template/svg.html
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__user">
+        <div class="header__img">
+          <img src="img/user.jpg" alt="user" width="60">
+        </div>
+        <div class="header__text">
+          <h1 class="header__title">Шаймарданов Марат Рифарович</h1>
+          <a class="header__email" href="mailto:tatarchap@gmail.com">tatarchap@gmail.com</a>
+        </div>
+      </div>
+      <div class="header__contacts">
+        <a class="header__link" href="https://github.com/yeffasol" target="_blank">
+          <svg class="header__svg  header__svg--git">
+            <use xlink:href="#git"></use>
+          </svg>
+        </a>
+        <a class="header__link" href="skype:klonip?call">
+          <svg class="header__svg  header__svg--skype">
+            <use xlink:href="#sk"></use>
+          </svg>
+        </a>
+        <a class="header__link" href="https://vk.com/yeffasol" target="_blank">
+          <svg class="header__svg  header__svg--vk">
+            <use xlink:href="#vk"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="about">
+        <h2 class="about__title">О будущем ученике</h2>
+        <p>Ребятам из Loftschool будет полезно узнать немного обо мне</p>
+        <div class="about__wrapper">
+          <div class="about__blocks">
+            <svg class="about__svg">
+              <use xlink:href="#hello"></use>
+            </svg>
+            <div class="about__text">
+              <h3>Немного обо мне</h3>
+              <p>Я живу в городе Казань (Россия). Мне 27 лет. Я занимаюсь Html-версткой с 2014 года. Владею навыками адаптивной верстки. Грамотно организую код для удобства работы в будущем.
+                <a href="http://yeffasol.github.io/portfolio/">Мое портфолио</a>
+              </p>
+            </div>
+          </div>
+          <div class="about__blocks">
+            <svg class="about__svg">
+              <use xlink:href="#experience"></use>
+            </svg>
+            <div class="about__text">
+              <h3>Мой опыт в разработке</h3>
+              <p>Уверенно владею HTML5, CSS3, JS, Jquery. В работе использую Post Css (также владею Less, Sass), Gulp, Git, БЭМ. Имел опыт работы с Bootstrap, Bower.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="courses">
+        <h2 class="courses__title">Курсы на loftblog</h2>
+        <p>которые мне помогут в выполнении этого задания</p>
+        <div class="courses__wrapper">
+          <div class="courses__item">
+            <div class="courses__text">
+              <a class="courses__link" href="">Основы JavaScript</a>
+              <p>Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg>24 урока (6 часов 46 минут)</small>
+              <input type="checkbox" id="view1">
+              <label class="courses__check" for="view1"><span></span>Посмотрел</label>
+            </div>
+          </div>
+          <div class="courses__item  courses__item--jquery">
+            <div class="courses__text">
+              <a class="courses__link" href="">Основы JQUERY</a>
+              <p>Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg>11 уроков (2 часа 6 минут)</small>
+              <input type="checkbox" id="view2">
+              <label class="courses__check" for="view2"><span></span>Посмотрел</label>
+            </div>
+          </div>
+          <div class="courses__item  courses__item--basis">
+            <div class="courses__text">
+              <a class="courses__link" href="">Базовые элементы страницы</a>
+              <p>Видеокурс по верстке и программированию основных и популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы, аккордеон, слайдшоу, слайдер и т.д.</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg>9 уроков (2 часа 7 минут)</small>
+              <input type="checkbox" id="view3">
+              <label class="courses__check" for="view3"><span></span>Посмотрел</label>
+            </div>
+          </div>
+          <div class="courses__item  courses__item--adaptive">
+            <div class="courses__text">
+              <a class="courses__link" href="">Создание адаптивных сайтов</a>
+              <p>В этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg>7 уроков (2 часа 11 минут)</small>
+              <input type="checkbox" id="view4">
+              <label class="courses__check" for="view4"><span></span>Посмотрел</label>
+            </div>
+          </div>
+          <div class="courses__item  courses__item--gallery">
+            <div class="courses__text">
+              <a class="courses__link" href="">Верстка адаптивной css галереи</a>
+              <p>В этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg>6 уроков (1 час 9 минут)</small>
+              <input type="checkbox" id="view5">
+              <label class="courses__check" for="view5"><span></span>Посмотрел</label>
+            </div>
+          </div>
+          <div class="courses__item  courses__item--flexbox">
+            <div class="courses__text">
+              <a class="courses__link" href="">Верстка адаптивной css галереи</a>
+              <p>В этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox..</p>
+              <small><svg>
+              <use xlink:href="#clock"></use>
+            </svg> 4 урока (50 минут)</small>
+              <input type="checkbox" id="view6">
+              <label class="courses__check" for="view6"><span></span>Посмотрел</label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>А это футер, с текстом внутри. Он должен быть прибит к низу окна браузера, не зависимо от количества контента на странице и размера окна.</p>
+  </footer>
   <script src="lib/fontfaceobserver.js"></script>
   <script src="js/script.js"></script>
 </body>
