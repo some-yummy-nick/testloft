@@ -16,7 +16,7 @@
         if (e.target.parentNode.parentNode.nextElementSibling) {
           e.target.parentNode.parentNode.nextElementSibling.classList.add('courses__item--margin-right');
         }
-        e.target.parentNode.parentNode.remove();
+        e.target.parentNode.parentNode.remove().classList.add('courses__item--invisible');
         if (wrapper.firstElementChild == null) {
           complete.classList.add('courses__complete--visible');
           title.remove();
