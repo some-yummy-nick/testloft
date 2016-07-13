@@ -19,6 +19,13 @@
   &__contacts {
     float: right;
     margin-top: 10px;
+    ul {
+      @mixin no-list;
+      li {
+        @mixin inline-block;
+        @mixin margin 20px;
+      }
+    }
   }
   &__title {
     margin-top: 5px;
@@ -44,6 +51,7 @@
   }
   &__text {
     margin-left: 15px;
+    margin-bottom: 20px;
   }
   &__email {
     margin-top: 0px;
@@ -54,7 +62,6 @@
   }
   &__link {
     text-decoration: none;
-    @mixin margin 20px;
   }
   &__svg {
     width: 30px;

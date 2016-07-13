@@ -4,15 +4,18 @@
   background: url("../img/bg-courses.png");
   &__title {
     @mixin section-title;
+    text-align: center;
   }
   &__title ~ p {
     @mixin section-p;
+    text-align: center;
   }
   &__wrapper {
     font-size: 0;
   }
   &__complete {
     display: none;
+    text-align: center;
     color: var(--green);
     font-size: 42px;
     font-weight: 500;
@@ -58,6 +61,7 @@
     background-color: #fff;
     background-image: url("../img/courses/courses-item1.jpg#courses");
     background-repeat: no-repeat;
+    transition: background-color 3s;
     border-radius: 2px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     &--jquery {
@@ -75,16 +79,21 @@
     &--flexbox {
       background-image: url("../img/courses/courses-item6.jpg#courses");
     }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: fff;
+      transition: background-color ease-out 0.5s;
+      opacity: 0;
+    }
     &--invisible {
       &:after {
-        content: "";
         display: block;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #e8f0dc;
         opacity: 0.4;
+        background-color: #e8f0dc;
         z-index: 2;
       }
     }
@@ -204,6 +213,9 @@
   }
   @media(max-width:939px) {
     &__item {
+      &:nth-child(1n) {
+        margin-left: 100px;
+      }
       &:nth-child(2n) {
         margin-right: 0;
       }
@@ -216,11 +228,17 @@
     &__item {
       display: block;
       margin: auto;
+      &:nth-child(1n) {
+        margin: auto;
+        margin-bottom: 20px;
+      }
       &:nth-child(2n) {
-        margin-right: 0;
+        margin: auto;
+        margin-bottom: 20px;
       }
       &:nth-child(3n) {
-        margin-right: 0;
+        margin: auto;
+        margin-bottom: 20px;
       }
     }
   }
