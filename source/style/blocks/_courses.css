@@ -59,26 +59,10 @@
     margin-bottom: 20px;
     text-align: left;
     background-color: #fff;
-    background-image: url("../img/courses-item1.jpg");
-    background-repeat: no-repeat;
     transition: background-color 3s;
     border-radius: 2px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    &--jquery {
-      background-image: url("../img/courses-item2.jpg");
-    }
-    &--basis {
-      background-image: url("../img/courses-item3.jpg");
-    }
-    &--adaptive {
-      background-image: url("../img/courses-item4.jpg");
-    }
-    &--gallery {
-      background-image: url("../img/courses-item5.jpg");
-    }
-    &--flexbox {
-      background-image: url("../img/courses-item6.jpg");
-    }
+
     &:after {
       content: "";
       position: absolute;
@@ -101,11 +85,14 @@
       margin-right: 20px !important;
     }
   }
+  &__img{
+     height: 170px;
+  overflow: hidden;
+  }
   &__text {
     position: relative;
     z-index: 2;
     background: #fff;
-    margin-top: 170px;
     padding-top: 20px;
     p {
       color: #727272;
@@ -224,9 +211,9 @@
       }
     }
   }
-  @media (max-width:659px) {
+  @media (max-width:819px) {
     &__item {
-      display: block;
+    display: block;
       margin: auto;
       &:nth-child(1n) {
         margin: auto;
