@@ -227,6 +227,10 @@
         margin: auto;
         margin-bottom: 20px;
       }
+      &--margin-right{
+        margin: 0 auto !important;
+        margin-bottom: 20px !important;
+       }
     }
   }
 }
