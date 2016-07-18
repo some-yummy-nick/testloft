@@ -825,5 +825,9 @@ input:checked + .courses__check {
         margin: auto;
         margin-bottom: 20px;
     }
+    .courses__item--margin-right {
+        margin: 0 auto !important;
+        margin-bottom: 20px !important;
+    }
 }
 /*# sourceMappingURL=style.css.map */
