@@ -59,25 +59,25 @@
     margin-bottom: 20px;
     text-align: left;
     background-color: #fff;
-    background-image: url("../img/courses/courses-item1.jpg#courses");
+    background-image: url("../img/courses-item1.jpg");
     background-repeat: no-repeat;
     transition: background-color 3s;
     border-radius: 2px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     &--jquery {
-      background-image: url("../img/courses/courses-item2.jpg#courses");
+      background-image: url("../img/courses-item2.jpg");
     }
     &--basis {
-      background-image: url("../img/courses/courses-item3.jpg#courses");
+      background-image: url("../img/courses-item3.jpg");
     }
     &--adaptive {
-      background-image: url("../img/courses/courses-item4.jpg#courses");
+      background-image: url("../img/courses-item4.jpg");
     }
     &--gallery {
-      background-image: url("../img/courses/courses-item5.jpg#courses");
+      background-image: url("../img/courses-item5.jpg");
     }
     &--flexbox {
-      background-image: url("../img/courses/courses-item6.jpg#courses");
+      background-image: url("../img/courses-item6.jpg");
     }
     &:after {
       content: "";
