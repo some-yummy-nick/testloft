@@ -334,8 +334,11 @@ main {
     padding-bottom: 72px;
 }
 .wrapper {
-    position: relative;
-    min-height: 100%;
+    display: table;
+    width: 100%;
+    margin: auto;
+    /*position: relative;*/
+    /*min-height: 100%;  */
 }
 .container {
     width: auto;
@@ -722,16 +725,17 @@ input:checked + .courses__check {
     color: #8cc34b;
 }
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    min-height: 72px;
+    display: table-row;
+    height: 1px;
     padding: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     background-color: #212121;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
 }
 .footer p {
     max-width: 509px;
