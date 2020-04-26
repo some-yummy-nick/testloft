@@ -1,4 +1,4 @@
-https://yeffasol.github.io/testloft/
+https://some-yummy-nick.github.io/testloft/
 
 npm i для установки зависимостей
 
